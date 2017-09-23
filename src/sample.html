@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="./css/sample.css">
+	<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<title>sample</title>
+</head>
+<body>
+<div id="main">
+	<div id="main_sub">
+		<table>
+			<tr>
+				<td>1-1</td>
+			</tr>
+			<tr>
+				<td>2-1</td>
+			</tr>
+			<tr>
+				<td>3-1</td>
+			</tr>
+			<tr>
+				<td id="btn"　style="color:#ff0000;">4-1</td>
+			</tr>
+		</table>
+		<table class="sortable">
+			<tr id="1">
+				<td class="content">1-2</td>
+				<td class="content handler">1-3</td>
+			</tr>
+			<tr id="2" class="sort_item">
+				<td class="content">2-2</td>
+				<td class="content handler">2-3</td>
+			</tr>
+			<tr id="3" class="sort_item">
+				<td class="content">3-2</td>
+				<td class="content handler">3-3</td>
+			</tr>
+			<tr id="4" class="no_sort">
+				<td class="content">4-2</td>
+				<td class="content handler">4-3</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<script type="text/javascript">
+$(function() {
+      $(".sortable tbody").sortable({
+      	handle:'.handler',
+  		placeholder: 'placeholder',
+  		helper:'clone',
+  		items:'> .sort_item',
+  		update : function(ev, ui) {
+                    console.log($(this).sortable("toArray").join(','));
+                }
+      });
+      $(".sortable tbody").disableSelection();
+      $('#btn').on('click',function(){
+      	console.log("click:"+$(".sortable tbody").sortable("toArray"));
+      	
+      });
+  });
+</script>
+</body>
+</html>

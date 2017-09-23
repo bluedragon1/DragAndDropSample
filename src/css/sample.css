@@ -1,0 +1,39 @@
+@charset 'utf-8';
+html,body{
+	height:100vh;
+}
+#main{
+	height: 100vh;
+	width: 100vh;
+	background-color: #f3f3f3;
+	text-align: center;
+	vertical-align: middle;
+	display: table-cell;
+}
+#main_sub{
+	width: 50vh;
+	height: 50vh;
+	background-color: #ffffff;
+	margin:0px auto;
+	display: flex;
+}
+td{
+	border: 1px solid #000000;
+}
+#main_sub table:nth-child(1) td{
+	border-right: 0px solid #ffffff;
+}
+table{
+	border-collapse: collapse;
+	width: 50%;
+}
+td{
+	width: 25vh;
+	height: 60px;
+}
+.sort_item{
+	background-color: #ffffff
+}
+.placeholder{
+	background-color: #ff00ff;
+}
