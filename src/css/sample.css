@@ -37,3 +37,7 @@ td{
 .placeholder{
 	background-color: #ff00ff;
 }
+
+.formError .formErrorContent {
+	background: #00ff00
+}
