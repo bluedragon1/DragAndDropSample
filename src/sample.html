@@ -50,13 +50,18 @@ $(function() {
   		placeholder: 'placeholder',
   		helper:'clone',
   		items:'> .sort_item',
+  		start:function(ev,ui){
+  			ui.helper.css("background-color","#0000ff");
+  		},
   		update : function(ev, ui) {
                     console.log($(this).sortable("toArray").join(','));
                 }
       });
       $(".sortable tbody").disableSelection();
       $('#btn').on('click',function(){
-      	console.log("click:"+$(".sortable tbody").sortable("toArray"));
+      		console.log("click:"+$(".sortable tbody").sortable("toArray"));
+      		$(".sortable tbody").children("tr#1").addClass("sort_item");
+      		console.log("length:"+$(".sortable").children("tr").length);
       	
       });
   });
